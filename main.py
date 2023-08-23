@@ -57,8 +57,7 @@ fill_in_the_table()
 
 
 def info_book():
-    # info = '1'
-    info = str(input('Введите имя или ID издателя'))
+    info = str(input('Введите имя или ID издателя:'))
     query = session.query(Book.title, Shop.name, Sale.price, Sale.date_sale).join(Publisher).join(Stock).join(
         Shop).join(Sale)
     if info.isalpha():
